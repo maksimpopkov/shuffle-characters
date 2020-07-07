@@ -14,7 +14,7 @@ namespace ShuffleCharacters
         /// <exception cref="ArgumentException">Count of iterations less than 0.</exception>
         public static string ShuffleChars(string source, int count)
         {
-            throw  new NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
