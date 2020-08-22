@@ -7,6 +7,7 @@ using static ShuffleCharacters.StringExtension;
 
 namespace ShuffleCharacters.Tests
 {
+    [TestFixture]
     public class StringExtensionTests
     {
         private static IEnumerable<TestCaseData> TestCases
