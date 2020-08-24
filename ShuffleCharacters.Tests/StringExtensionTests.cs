@@ -14,17 +14,6 @@ namespace ShuffleCharacters.Tests
         {
             get
             {
-                const int length = 1_000_000;
-                
-                string bigString = new string(Enumerable.Repeat('A', length).ToArray());
-
-                var random = Randomizer.CreateRandomizer();
-                
-                for (int i = 1; i <= 5; i++)
-                {
-                    yield return new TestCaseData(bigString, random.Next(int.MaxValue / 2, int.MaxValue), bigString);
-                }
-
                 yield return new TestCaseData("Привет Эпам", 2, "Пепртаи мвЭ");
                 yield return new TestCaseData("Hello EPAM!", 2, "HoAe MlE!lP");
                 yield return new TestCaseData("Hello EPAM!", 22, "HoAe MlE!lP");
