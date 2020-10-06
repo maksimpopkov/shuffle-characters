@@ -5,6 +5,8 @@ using NUnit.Framework;
 using NUnit.Framework.Internal;
 using static ShuffleCharacters.StringExtension;
 
+#pragma warning disable CA1707
+
 namespace ShuffleCharacters.Tests
 {
     [TestFixture]
