@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
@@ -38,24 +38,22 @@ namespace ShuffleCharacters.Tests
         [TestCase("Das lässt sich nicht ändern.", 10, ExpectedResult = "Drdätcnhi sä anen hi cstsls.")]
         [TestCase("Das lässt sich nicht ändern.", 5, ExpectedResult = "Däsn r thhdasiiänl  tessccn.")]
         [TestCase("1234567890", int.MaxValue, ExpectedResult = "1357924680")]
-        [TestCase("Lorem ipsum dolor sit amet consectetur adipisicing elit." +
-                  " Excepturi laudantium, vel natus fugiat, illum dignissimos" +
-                  " fuga officia maiores ea at ex quis animi incidunt doloremque, " +
-                  "dolor quia. Quisquam, veniam hic!", int.MaxValue,
+        [TestCase(
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit." +
+            " Excepturi laudantium, vel natus fugiat, illum dignissimos" +
+            " fuga officia maiores ea at ex quis animi incidunt doloremque, " +
+            "dolor quia. Quisquam, veniam hic!", int.MaxValue,
             ExpectedResult = "Ldeodeeamniat e oiaeumsac mtuf a  nua Eiadsn mocav " +
                              "ivsdiau pm rdlirqeinitaei iutigqir  e pis li  ac nus " +
                              "Qteuto egomrp fnittsmqeri uo., ,icuaohr,gn,oass iclalm " +
                              "uieoilfuncnoismudxqlttse itid umuimclii.sxl ougfar!")]
-        [TestCase(@"!#%')+-/13579;=?ACEGIKMOQSU""$&(*,.02468:<>@BDFHJLNPRT", 5,
-            ExpectedResult = @"!,7BM#.9DO%0;FQ'2=HS)4?JU+6AL""-8CN$/:EP&1<GR(3>IT*5@K")]
-        [TestCase(@"!#%')+-/13579;=?ACEGIKMOQSU""$&(*,.02468:<>@BDFHJLNPRT", 20,
-            ExpectedResult = @"!QLGB=83.)$TOJE@;61,'""RMHC>94/*%UPKFA<72-(#SNID?:50+&")]
-        [TestCase(@"!#%')+-/13579;=?ACEGIKMOQSU""$&(*,.02468:<>@BDFHJLNPRT", 955031,
-            ExpectedResult = @"!""#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTU")]
-        [TestCase(@"!snid_ZUPKFA<72-(#upkfa\WRMHC>94/*%wrmhc^YTOJE@;61,'""toje`[VQLGB=83.)$vqlgb]XSNID?:50+&x",
+        [TestCase(@"!#%')+-/13579;=?ACEGIKMOQSU""$&(*,.02468:<>@BDFHJLNPRT", 5, ExpectedResult = @"!,7BM#.9DO%0;FQ'2=HS)4?JU+6AL""-8CN$/:EP&1<GR(3>IT*5@K")]
+        [TestCase(@"!#%')+-/13579;=?ACEGIKMOQSU""$&(*,.02468:<>@BDFHJLNPRT", 20, ExpectedResult = @"!QLGB=83.)$TOJE@;61,'""RMHC>94/*%UPKFA<72-(#SNID?:50+&")]
+        [TestCase(@"!#%')+-/13579;=?ACEGIKMOQSU""$&(*,.02468:<>@BDFHJLNPRT", 955031, ExpectedResult = @"!""#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTU")]
+        [TestCase(
+            @"!snid_ZUPKFA<72-(#upkfa\WRMHC>94/*%wrmhc^YTOJE@;61,'""toje`[VQLGB=83.)$vqlgb]XSNID?:50+&x",
             2147483637,
-            ExpectedResult =
-                @"!/=KYgu,:HVdr)7ESao&4BP^l#1?M[iw.<JXft+9GUcq(6DR`n%3AO]k""0>LZhv-;IWes*8FTbp'5CQ_m$2@N\jx")]
+            ExpectedResult = @"!/=KYgu,:HVdr)7ESao&4BP^l#1?M[iw.<JXft+9GUcq(6DR`n%3AO]k""0>LZhv-;IWes*8FTbp'5CQ_m$2@N\jx")]
         public string ShuffleCharsTests(string source, int count)
             => ShuffleChars(source, count);
 
